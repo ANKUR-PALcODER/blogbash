@@ -1,9 +1,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  row-gap: 3rem;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
   min-height: 100vh;
 }
 
@@ -77,8 +78,43 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 0;
+  padding: 2rem 0;
+  flex-direction: column;
 }
+.BlogsHeading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.BlogsHeading::after {
+  background: var(--primary-glow);
+  width: 480px;
+  height: 200px;
+  z-index: -2;
+}
+.BlogsHeading::before {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 480px;
+  height: 200px;
+  margin-left: -400px;
+  /* z-index: -1; */
+  
+}
+.BlogsHeading::before,
+.BlogsHeading::after {
+  content: "";
+  left: 50%;
+  position: absolute;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+
 
 .center::before {
   background: var(--secondary-glow);
@@ -203,7 +239,7 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+/* @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
   }
@@ -225,5 +261,61 @@
   }
   to {
     transform: rotate(0deg);
+  }
+} */
+
+.blogs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.padding {
+  padding-top: 2rem;
+}
+.mainnav ul{
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+}
+.mainnav ul li{
+  list-style: none;
+}
+.blog{
+  background-color: blue;
+}
+
+@media only screen and (max-width: 350px) {
+  .main{
+    padding: 0px;
+  }
+  .BlogsHeading{
+    size: 0cap;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .main{
+    padding: 0rem 2rem 0rem 2rem;
+    row-gap: 0rem;
+  }
+  .padding{
+    padding-top: 0rem;
+  }
+  .card{
+    padding: 1rem 1rem;
+  }
+  .grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .grid a{
+    max-width: 160px;
+  }
+  .grid h2{
+    font-size: 15px;
+  }
+  .grid p{
+    font-size: 10px;
+    text-align: left;
   }
 }

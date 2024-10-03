@@ -1,0 +1,30 @@
+.container{
+    width: 45vw;
+    margin: auto;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.label{
+    margin-right: 10px;
+}
+.descinput{
+    height: 100px;
+    /* width: 400px; */
+}
+.mb_3{
+    margin-bottom: 1.5rem;
+}
+.contactItems{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    width: 100px;
+}
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+}

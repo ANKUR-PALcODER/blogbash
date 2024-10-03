@@ -1,0 +1,6 @@
+.main{
+    padding: 3rem 15rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}

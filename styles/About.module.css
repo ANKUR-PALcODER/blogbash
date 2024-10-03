@@ -1,0 +1,13 @@
+.container{
+    margin: 45px auto;
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.servicelist{
+    margin-left: 20px;
+}
+.center{
+    text-align: center;
+}
