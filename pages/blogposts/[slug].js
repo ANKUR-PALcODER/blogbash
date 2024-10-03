@@ -12,7 +12,7 @@ export default function slug(props) {
   useEffect(() => {
     // setHeading(props.fileData.title);
     // setContent({__html : props.fileData.content});
-    console.log(query);
+    // console.log(query);
     if(isReady) {
       // console.log(query);
       setHeading(query.slug);
@@ -27,9 +27,11 @@ export default function slug(props) {
         //     },
         //   }
         // );
-        const response = await fetch(`http://localhost:3000/api/blogEndPoint?file=How_to_Learn_NodeJS`,{method:"GET"});
+        const slug = query.slug;
+        console.log(slug);
+        const response = await fetch(`http://localhost:3000/api/blogEndPoint?file=${slug}`,{method:"GET"});
         const parsedData = await response.json();
-        console.log(parsedData);
+        // console.log(parsedData);
         setContent(parsedData.content);
         // setContent(response.data.content);
       })();

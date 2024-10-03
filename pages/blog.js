@@ -19,7 +19,7 @@ function blog(props) {
       setAllLength((await allData.json()).dirsContent.length);
       let response = await fetch("http://localhost:3000/api/blogLists?count=5");
       let responseData = await response.json();
-      console.log(responseData.dirsContent);
+      // console.log(responseData.dirsContent);
       setBlog(responseData.dirsContent);
     })();
   }, []);
