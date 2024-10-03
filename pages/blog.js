@@ -15,7 +15,8 @@ function blog(props) {
     // setBlog(props.dirsContent);
     (async () => {
       let allData = await fetch("http://localhost:3000/api/blogLists?count=all");
-      let dirsPath = (await allData.json()).dirsContent
+      let dirsPath = (await allData.json()).dirsContent;
+      console.log(dirsPath);
       // console.log((await allData.json()).dirsContent.length);
       setAllLength(dirsPath.length);
       let response = await fetch("http://localhost:3000/api/blogLists?count=5");
