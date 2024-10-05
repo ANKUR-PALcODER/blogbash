@@ -1,4 +1,3 @@
-"use client"
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import blogs from "../styles/Blog.module.css";
@@ -15,12 +14,12 @@ function blog(props) {
     // console.log(props);
     // setBlog(props.dirsContent);
     (async () => {
-      let allData = await fetch("/api/blogLists?count=all",{mode: 'no-cors'});
+      let allData = await fetch("http://localhost:3000/api/blogLists?count=all",{mode: 'no-cors'});
       let dirsPath = (await allData.json()).dirsContent;
       console.log(dirsPath);
       // console.log((await allData.json()).dirsContent.length);
       setAllLength(dirsPath.length);
-      let response = await fetch("/api/blogLists?count=5",{mode: 'no-cors'});
+      let response = await fetch("http://localhost:3000/api/blogLists?count=5",{mode: 'no-cors'});
       let responseData = await response.json();
       // console.log(responseData.dirsContent);
       setBlog(responseData.dirsContent);
@@ -30,7 +29,7 @@ function blog(props) {
   const fetchData = ()=>{
     (async ()=>{
       // setTimeout(()=>{},7000);
-      let nextData = await fetch(`/api/blogLists?count=${blog.length+5}`,{mode: 'no-cors'});
+      let nextData = await fetch(`http://localhost:3000/api/blogLists?count=${blog.length+5}`,{mode: 'no-cors'});
       setBlog((await nextData.json()).dirsContent);
     })();
   }
