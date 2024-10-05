@@ -29,7 +29,7 @@ export default function slug(props) {
         // );
         const slug = query.slug;
         console.log(slug);
-        const response = await fetch(`http://localhost:3000/api/blogEndPoint?file=${slug}`,{method:"GET"});
+        const response = await fetch(`http://localhost:3000/api/blogEndPoint?file=${slug}`,{mode: 'no-cors',method:"GET"});
         const parsedData = await response.json();
         // console.log(parsedData);
         setContent(parsedData.content);
